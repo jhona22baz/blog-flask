@@ -1,0 +1,30 @@
+{% extends "master.html" %}    
+    {% block header %}
+    <div class="blog-header">
+        <h1 class="blog-title">The {{user.nickname}} Blog</h1>
+        <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
+    </div>
+    {% endblock %}
+{% block body %}
+
+        <div class="col-sm-8 blog-main">
+            {% for post in posts %}
+    
+                <div class="blog-post">
+                    <h2 class="blog-post-title">{{post.titlepost}}</h2>
+                    <p class="blog-post-meta">January 1, 2014 by <a href="#">{{post.author.nickname}}</a></p>
+
+                    <p>{{post.body}}</p>
+            
+                </div><!-- /.blog-post -->
+            {% endfor %}
+
+          <ul class="pager">
+            <li><a href="#">Previous</a></li>
+            <li><a href="#">Next</a></li>
+          </ul>
+
+        </div><!-- /.blog-main -->
+
+       
+{% endblock %}
